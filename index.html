@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- add styles mocha to display results -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+  <!-- add mocha -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+  <script>
+    // turn on BDD-style testing mode
+    mocha.setup('bdd');
+  </script>
+  <!-- add chai -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+  <script>
+    // chai provides a lot of features. Declare assert globally
+    let assert = chai.assert;
+  </script>
+</head>
+
+	<body>
+
+	<script>
+		function isIsogram(str){
+			let newStr = str.toLowerCase();
+
+			for(let i = 0; i < newStr.length; ++i) {
+				for(let j = i + 1; j < newStr.length; ++j) {
+					if(newStr[i] === newStr[j]) {
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+	</script>
+
+	<!-- script with specification (describe, it...) -->
+	<script src="test.js"></script>
+
+	<!-- element with id="mocha" will be contain test results -->
+	<div id="mocha"></div>
+
+	<!-- run tests -->
+	<script>
+		mocha.run();
+	</script>
+	</body>
+
+</html>
